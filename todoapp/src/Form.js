@@ -1,32 +1,62 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
+
+// const Form = ({ addTodo }) => {
+//   //   console.log("Form");
+//   let [value, setValue] = useState("");
+
+//   const handleSubmit = (e) => {
+//     // formを送信(Submit)した際の処理を記述します。
+//     // console.log("value:", e.target.value);
+//     e.preventDefault();
+//     if (value === "") {
+//       alert("空白です");
+//     } else {
+//       addTodo(value);
+//       console.log(value);
+//       setValue("");
+//     }
+//   };
+//   return (
+//     <form onSubmit={handleSubmit}>
+//       <input
+//         value={value}
+//         type="text"
+//         id="textForm"
+//         onChange={(e) => {
+//           setValue(e.target.value);
+//           console.log(setValue);
+//         }}
+//       />
+//     </form>
+//   );
+// };
+
+// export default Form;
+
+import React from "react";
+import { useState } from "react";
 
 const Form = ({ addTodo }) => {
-  //   console.log("Form");
-  let [value, setValue] = useState("");
-
+  const [val, setVal] = useState("");
   const handleSubmit = (e) => {
     // formを送信(Submit)した際の処理を記述します。
-    // console.log("value:", e.target.value);
     e.preventDefault();
-    if (value === "") {
-      alert("空白です");
+    if (val === "") {
+      alert("空白以外を入れてください");
     } else {
-      addTodo(value);
-      console.log(value);
-      setValue("");
+      setVal("");
+      addTodo(val);
     }
   };
+  console.log("Form submitted.");
+
+  const text = (e) => {
+    setVal(e.target.value);
+  };
+  console.log(val);
   return (
     <form onSubmit={handleSubmit}>
-      <input
-        value={value}
-        type="text"
-        id="textForm"
-        onChange={(e) => {
-          setValue(e.target.value);
-          console.log(setValue);
-        }}
-      />
+      <input type="text" value={val} onChange={text}></input>
     </form>
   );
 };

@@ -19,9 +19,16 @@ const Example = () => {
             console.log(animal.indexOf(filterVal));
             return isMatch;
           })
-          .map((animal) => (
-            <li key={animal}>{animal}</li>
-          ))}
+          .map((animal) => {
+            return (
+              // 三項演算子
+              <li key={animal}>{animal === "Dog" ? animal + "★" : animal}</li>
+            );
+            // if (animal === "Dog") {
+            //   return <li key={animal}>{animal + "★"}</li>;
+            // }
+            // return <li key={animal}>{animal}</li>;
+          })}
       </ul>
     </>
   );

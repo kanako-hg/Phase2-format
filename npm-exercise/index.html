@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>フロントエンドエコシステム概論 | パッケージマネージャ</title>
+  </head>
+
+  <body>
+    <p id="time"></p>
+    <script src="node_modules/moment/min/moment.min.js"></script>
+    <script>
+      var time = moment(); // 現在時刻を取得
+      var friendlyTime = time.format("今日はYYYY年M月D日です。"); // わかりやすい表記に変換
+      document.getElementById("time").textContent = friendlyTime; // <p>タグ内で表示
+    </script>
+  </body>
+</html>
