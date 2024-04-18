@@ -60,4 +60,3 @@ const Room = () => {
 };
 
 export default Room;
-console.log("tuika");
